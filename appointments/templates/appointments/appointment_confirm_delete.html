@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancel Appointment</title>
+</head>
+<body>
+    <h2>Are you sure you want to cancel this appointment?</h2>
+    <p>Doctor: {{ object.doctor.name }}</p>
+    <p>Date: {{ object.date }} at {{ object.time }}</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Cancel</button>
+        <a href="{% url 'appointment-list' %}">No, Go Back</a>
+    </form>
+</body>
+</html>

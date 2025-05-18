@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors</title>
+</head>
+<body>
+  <h1>Available Doctors</h1>
+  <ul>
+    {% for doctor in doctors %}
+     <li><a href="{% url 'doctor_detail' doctor.pk %}">{{doctor.name}} - {{doctor.specialty}}</a></li>
+    {% empty %}
+      <li>No Doctors Available</li>
+    {% endfor %}
+  </ul>
+  <p><a href="{% url 'appointment-create' %}">Book an Appointment</a></p>
+
+</body>
+</html>

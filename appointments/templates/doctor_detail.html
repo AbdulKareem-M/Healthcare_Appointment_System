@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Detail</title>
+</head>
+<body>
+    <h1>Dr. {{ doctor.name }}</h1>
+    <p>Specialization: {{ doctor.specialty }}</p>
+
+    <a href="{% url 'appointment-create' %}">Book Appointment</a>
+    <br>
+    <a href="{% url 'doctors_list' %}">Back to Doctors</a>
+</body>
+</html>
